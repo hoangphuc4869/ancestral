@@ -1,0 +1,157 @@
+@font-face {
+  font-family: cerapro-black_italic;
+  src: url("cera pro sv/Cera Pro Black Italic.otf");
+}
+
+@font-face {
+  font-family: cerapro-black;
+  src: url("cera pro sv/Cera Pro Black.otf");
+}
+
+@font-face {
+  font-family: cerapro-bold;
+  src: url("cera pro sv/Cera Pro Bold.otf");
+}
+
+@font-face {
+  font-family: cerapro-light;
+  src: url("cera pro sv/Cera Pro Light.otf");
+}
+
+@font-face {
+  font-family: cerapro-medium;
+  src: url("cera pro sv/Cera Pro Medium.otf");
+}
+
+@font-face {
+  font-family: cerapro-reg_italic;
+  src: url("cera pro sv/Cera Pro Regular Italic.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cerapro-bold;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header_section_wrap {
+  position: relative;
+  width: 100%;
+  height: 1080px;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0)); */
+}
+
+.notification_bar {
+  width: 100%;
+  background-color: #724535;
+  text-align: center;
+  position: relative;
+}
+
+.notification_bar a {
+  display: block;
+  color: #fff;
+  font-size: 21px;
+  padding: 10px;
+}
+
+#header_video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+.menu {
+  max-width: 90%;
+}
+.header_logo img {
+  max-width: 205px;
+}
+
+.shop_all a {
+  font-size: 22px;
+}
+
+.main_menu {
+  margin-top: 30px;
+}
+
+.main_menu_ li a {
+  font-size: 22px;
+  margin-left: 30px;
+}
+
+.shop_all a {
+  margin-left: 20px;
+}
+
+.right_menu {
+  margin-top: 26px;
+}
+
+.free_consult {
+  padding: 5px 20px;
+  background-color: #eecf98;
+  border-radius: 3px;
+}
+.free_consult a {
+  font-size: 22px;
+  color: #000;
+}
+.icons {
+  font-size: 30px;
+}
+
+.embrace {
+  font-size: 26px;
+  color: #fff;
+  letter-spacing: 0.5cm;
+  margin-bottom: 30px;
+}
+
+.header_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.feel {
+  position: relative;
+  font-size: 90px;
+  font-family: cerapro-light;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.3cm;
+  margin-bottom: 30px;
+}
+.feel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  background: yellow;
+  display: block;
+  height: 2px;
+  width: 500px;
+  left: calc(50% - 250px);
+}
+
+.shopbtn {
+  background: #bd472a;
+  font-size: 24px;
+  padding: 10px 20px;
+}
