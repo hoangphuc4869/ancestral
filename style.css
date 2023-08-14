@@ -51,6 +51,17 @@ ul {
   height: 1080px;
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0)); */
 }
+.header_row {
+  position: relative;
+}
+.overlay {
+  width: 100%;
+  height: 164px;
+  position: absolute;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  top: 0;
+  border: none;
+}
 
 .notification_bar {
   width: 100%;
@@ -102,14 +113,20 @@ ul {
   margin-top: 26px;
 }
 
-.free_consult {
-  padding: 5px 20px;
-  background-color: #eecf98;
-  border-radius: 3px;
-}
 .free_consult a {
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: #f3cf90;
+  border-radius: 3px;
   font-size: 22px;
   color: #000;
+  transition: transform 0.2s ease;
+}
+
+.free_consult a:hover {
+  color: #bd472a;
+  background-color: #f4c16a;
+  transform: scale(0.97);
 }
 .icons {
   font-size: 30px;
@@ -151,7 +168,110 @@ ul {
 }
 
 .shopbtn {
+  display: inline-block;
   background: #bd472a;
   font-size: 24px;
   padding: 10px 20px;
+  transform: scale(1);
+  transition: transform 0.2s ease;
+}
+
+.shopbtn:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+.starter_pack_wrap {
+  background-image: url("images/starter-bg.webp");
+  background-repeat: no-repeat;
+
+  width: 100%;
+}
+.starter_pack {
+  max-width: 90%;
+  margin: 0 auto;
+}
+.starter_pack_content {
+  width: 100%;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.line1 {
+  text-decoration: underline 2px;
+  font-size: 21px;
+  font-family: cerapro-light;
+}
+
+.line2 {
+  font-size: 55px;
+}
+
+.get_started_Btn {
+  font-size: 17px;
+  background: #bd472a;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 30px;
+}
+
+.line3 {
+  margin-top: 50px;
+  font-size: 22px;
+  font-family: cerapro-light;
+  font-weight: bold;
+}
+
+.line3sub {
+  color: #bd472a;
+}
+
+.pack_img {
+  position: relative;
+}
+.pack_img img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.item {
+  position: relative;
+  font-size: 26px;
+  text-align: justify;
+  background-image: url("images/check.png");
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.impact {
+  width: 62%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.box-check {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+
+  margin-left: 30px;
+}
+
+.box-check i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1dab4;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.box-check p {
+  font-size: 26px;
+  margin-bottom: 0;
+  margin-left: 10px;
 }
