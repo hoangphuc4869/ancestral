@@ -249,7 +249,6 @@ ul {
 .impact {
   width: 62%;
   margin-top: 50px;
-  margin-bottom: 50px;
 }
 .box-check {
   display: flex;
@@ -293,6 +292,7 @@ ul {
   width: 90%;
   margin: 0 auto;
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .product_detail {
@@ -309,4 +309,394 @@ ul {
 
 .product_img img {
   width: 100%;
+}
+
+.shop_btn {
+  font-size: 22px;
+  background: #bd472a;
+  padding: 20px 20px;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+.seen_btn {
+  background: #eecf98;
+  position: absolute;
+  bottom: 0;
+  font-size: 20px;
+  font-family: cerapro-light;
+  font-weight: 100;
+  letter-spacing: 0.1cm;
+  padding: 10px 50px;
+  border-radius: 5px;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+}
+@keyframes slide {
+  0% {
+    transform: translate3d(-24%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slides {
+  position: relative;
+  width: 90%;
+  margin: 100px auto;
+  transform: translate3d(100%, 0, 0);
+  animation: slide 10s linear infinite;
+  animation-play-state: running;
+}
+
+.slider img {
+  height: 50px;
+  margin: 0 40px;
+}
+
+.mountain_wrap {
+  position: relative;
+
+  width: 100%;
+  margin: 0 auto;
+  background-image: url("images/mountain-new-slide.webp");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mountain {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 18%;
+  padding-bottom: 5%;
+}
+
+.mountain_box {
+  max-width: 90%;
+}
+
+.mountain_left {
+  color: #fff;
+  padding-top: 50px;
+}
+
+.mountain_left_title {
+  position: relative;
+  font-size: 60px;
+  line-height: 2cm;
+}
+.mountain_left_title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 60%;
+  height: 5px;
+  background-color: #eecf98;
+  bottom: 0;
+}
+
+.mountain_left_text {
+  font-size: 28px;
+  font-family: cerapro-light;
+  margin-top: 20px;
+}
+
+.mountain_right {
+  background: rgb(226 227 224);
+  padding: 50px 70px;
+  border-radius: 15px;
+}
+
+.mountain_right_title {
+  font-size: 60px;
+  color: black;
+  line-height: 1.5cm;
+}
+
+.mountain_list {
+  margin-top: 50px;
+  position: relative;
+}
+.mountain_list li {
+  position: relative;
+  z-index: 1;
+}
+
+.mountain_list::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 95%;
+  top: 12px;
+  left: 13px;
+  border-left: 2px dashed black;
+  z-index: 0;
+}
+
+.shop_supplements_btn {
+  margin-top: 40px;
+}
+.shop_supplements_btn i {
+  background-color: #bd472a;
+  padding: 10px 10px;
+}
+
+.shop_supplements_btn a {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.feel_alive {
+  position: absolute;
+  opacity: 0.1;
+  left: 26%;
+  top: 12%;
+}
+
+#ship {
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.increase_btn {
+  display: inline-flex;
+  margin-right: 20px;
+}
+.minus,
+.plus {
+  background-color: #f8f0dc;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.minus:hover,
+.plus:hover {
+  background-color: #eecf98;
+}
+.minus {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.plus {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.number {
+  background-color: #fbf7ed;
+  padding: 10px 30px;
+  margin: 0;
+}
+.add_tocart {
+  background: #bd472a;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 30px;
+}
+
+.add_tocart a {
+  font-size: 16px;
+}
+
+.ancestral_products_wrap {
+  position: relative;
+  background-image: url("images/products/coll-bg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  /* overflow: hidden; */
+}
+
+.ancestral_products {
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.ancestral_products .arrow {
+  position: absolute;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 50%;
+  font-size: 20px;
+  z-index: 9999;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ancestral_products .arrow:first-child {
+  left: 0;
+  display: none;
+}
+
+.ancestral_products .arrow:last-child {
+  right: 0;
+}
+
+.product_wrap {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+.product {
+  position: relative;
+  background-color: #fff;
+  border-radius: 20px;
+  width: 97%;
+  top: 8px;
+  margin: 0 auto;
+}
+.supplement_img {
+  background-image: url("images/products/tile-bg.webp");
+
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.supplement_img img {
+  width: 100%;
+}
+
+.supplement_title {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.rate span {
+  font-size: 16px;
+  font-family: cerapro-light;
+}
+.rate {
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 30px;
+  color: #bd472a;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.effect {
+  font-size: 14px;
+  font-family: cerapro-light;
+}
+.checkbox {
+  position: relative;
+  padding-left: 30px;
+  /* opacity: 0; */
+}
+
+.checkbox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  border: 1px solid black;
+  left: 0;
+}
+
+.check_sub {
+  display: inline-block;
+  position: relative;
+}
+
+.check_sub .exclamination i {
+  position: absolute;
+  background: #bd472a;
+  padding: 1px 6px;
+  border-radius: 50%;
+  font-size: 10px;
+  color: #fff;
+  right: -12px;
+  cursor: pointer;
+}
+
+.exclamination .using {
+  position: absolute;
+  font-size: 12px;
+  width: 100%;
+  top: -77px;
+  right: -8px;
+  transform: translateX(50%);
+  background: #bd472a;
+  color: #fff;
+  font-family: cerapro-light;
+  border-radius: 10px;
+  padding: 10px;
+  display: none;
+}
+
+.exclamination i:hover + .using {
+  display: block;
+}
+
+.checkbox::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #000;
+  border-radius: 100%;
+  left: 3px;
+  top: 3px;
+}
+
+#check_subscribe,
+#checkOneTime {
+  opacity: 0;
+}
+
+.check_field:not(:checked) + .checkbox::after {
+  transform: scale(0);
+  opacity: 0;
+}
+label:hover {
+  cursor: pointer;
+}
+.restore_title {
+  text-align: center;
+  text-decoration: underline;
+  font-family: cerapro-light;
+  font-size: 22px;
+}
+
+.restore_title1 {
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.products_row {
+  position: relative;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  scroll-behavior: smooth;
+}
+
+.products_row.dragging {
+  scroll-behavior: auto;
+  cursor: grab;
+}
+
+.products_row.dragging .product_wrap {
+  pointer-events: none;
 }
