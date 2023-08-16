@@ -951,3 +951,27 @@ label:hover {
 .imag img {
   width: 100%;
 }
+
+.layer {
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.layer:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.layer i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 40px;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
