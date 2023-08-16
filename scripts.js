@@ -74,3 +74,34 @@ carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("mousemove", dragging);
 carousel.addEventListener("mouseup", dragStop);
 carousel.addEventListener("mouseleave", dragStop);
+
+const hideShip = () => {
+  let OneTime = document.getElementsByClassName("onetime"); //buttons
+  let ship = document.getElementsByClassName("shipment"); //things to hide
+  for (let i = 0; i < OneTime.length; i++) {
+    OneTime[i].addEventListener("click", () => {
+      ship[i].classList.toggle("hide"); //display none
+    });
+  }
+};
+
+//read more
+
+const parentContainer = document.querySelectorAll(".content_rev");
+console.log(parentContainer);
+
+for (let i = 0; i < parentContainer.length; i++) {
+  parentContainer[i].addEventListener("click", (event) => {
+    const current = event.target;
+    const isReadmore = current.className.includes("readMore_btn");
+    if (!isReadmore) {
+      return;
+    }
+    const currenText = event.target.parentNode.querySelector(".read_more_text");
+    // console.log(currenText.innerHTML);
+    currenText.classList.toggle("show_text");
+    current.textContent = current.textContent.includes("Read more")
+      ? "...Read less"
+      : "...Read more";
+  });
+}
