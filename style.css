@@ -1343,7 +1343,11 @@ button {
   .mountain,
   .feel_alive,
   .consultation,
-  .review {
+  .review,
+  .footer,
+  .visa,
+  .copyright,
+  .prev_footer {
     width: auto;
   }
   .menu_mobile {
@@ -1367,6 +1371,12 @@ button {
   .bot_consultation {
     flex-wrap: wrap;
     margin-top: 40px;
+  }
+  .explore {
+    flex-wrap: wrap;
+  }
+  .explore p {
+    font-size: 24px;
   }
   .left_con img {
     width: 100%;
@@ -1542,5 +1552,47 @@ button {
   .con_rev > i:last-child {
     bottom: 40px;
     right: 30%;
+  }
+
+  .boost {
+    width: 90%;
+    top: -25%;
+  }
+
+  .boost p:first-child {
+    font-size: 14px;
+  }
+  .boost p {
+    font-size: 20px;
+  }
+  input {
+    margin-bottom: 10px;
+  }
+  .brand,
+  .my_ancestral,
+  .help,
+  .footer-right {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .help p::after,
+  .brand p::after,
+  .my_ancestral p::after,
+  .footer-right p:first-child::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .footer-wrap {
+    width: 100%;
+    background-color: #271d16;
+    padding-top: 300px;
+    padding-bottom: 50px;
+  }
+  .copyright {
+    font-size: 15px;
+    margin-bottom: 50px;
+  }
+  .visa_brand i {
+    font-size: 17px;
   }
 }
