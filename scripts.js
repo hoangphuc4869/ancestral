@@ -53,7 +53,7 @@ arrowIcons.forEach((icon) => {
 const dragStart = (e) => {
   // updating global variables value on mosue down event
   isDragging = true;
-  prePageX = e.pageX;
+  prePageX = e.pageX || e.touches[0].pageX;
   preScrollLeft = carousel.scrollLeft;
 };
 const dragging = (e) => {
@@ -62,7 +62,7 @@ const dragging = (e) => {
   e.preventDefault();
   carousel.classList.add("dragging");
   carousel.scrollLeft = e.pageX;
-  let possitionDiff = e.pageX - prePageX;
+  let possitionDiff = (e.pageX || e.touches[0].pageX) - prePageX;
   carousel.scrollLeft = preScrollLeft - possitionDiff;
   showHiddenIcon();
 };
@@ -72,9 +72,14 @@ const dragStop = () => {
   carousel.classList.remove("dragging");
 };
 carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("touchstart", dragStart);
+
 carousel.addEventListener("mousemove", dragging);
+carousel.addEventListener("touchmove", dragging);
+
 carousel.addEventListener("mouseup", dragStop);
 carousel.addEventListener("mouseleave", dragStop);
+carousel.addEventListener("touchend", dragStop);
 
 ///review slider
 
@@ -97,7 +102,7 @@ navIcons.forEach((nav) => {
 
 const pullingStart = (e) => {
   isPulling = true;
-  prevPgX = e.pageX;
+  prevPgX = e.pageX || e.touches[0].pageX;
   prevScrLeft = container_reivew.scrollLeft;
 };
 
@@ -105,7 +110,7 @@ const pulling = (e) => {
   if (!isPulling) return;
   e.preventDefault();
   container_reivew.classList.add("smoothy_dragging");
-  let diffPo = e.pageX - prevPgX;
+  let diffPo = (e.pageX || e.touches[0].pageX) - prevPgX;
   container_reivew.scrollLeft = prevScrLeft - diffPo;
 };
 
@@ -115,8 +120,12 @@ const pullingEnd = () => {
 };
 
 container_reivew.addEventListener("mousemove", pulling);
+container_reivew.addEventListener("touchmove", pulling);
 container_reivew.addEventListener("mousedown", pullingStart);
+container_reivew.addEventListener("touchstart", pullingStart);
 container_reivew.addEventListener("mouseleave", pullingEnd);
+container_reivew.addEventListener("touchend", pullingEnd);
+container_reivew.addEventListener("mouseup", pullingEnd);
 
 const hideShip = () => {
   let OneTime = document.getElementsByClassName("onetime"); //buttons
