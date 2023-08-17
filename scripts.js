@@ -116,7 +116,7 @@ const pullingEnd = () => {
 
 container_reivew.addEventListener("mousemove", pulling);
 container_reivew.addEventListener("mousedown", pullingStart);
-container_reivew.addEventListener("mouseup", pullingEnd);
+container_reivew.addEventListener("mouseleave", pullingEnd);
 
 const hideShip = () => {
   let OneTime = document.getElementsByClassName("onetime"); //buttons
@@ -148,3 +148,31 @@ for (let i = 0; i < parentContainer.length; i++) {
       : "...Read more";
   });
 }
+
+const sidebar = document.querySelector(".sidebar");
+const x = document.querySelector(".x");
+const shopAll = document.querySelector(".shop_all");
+// const outside = document.querySelector(".main");
+// console.log(outside);
+
+// document.onclick = function (e) {
+//   if (e.target.id !== "x") {
+//     sidebar.classList.add("hideSidebar");
+//     sidebar.classList.remove("showSidebar");
+//   }
+// };
+
+shopAll.addEventListener("click", () => {
+  sidebar.classList.add("showSidebar");
+  sidebar.classList.remove("hideSidebar");
+});
+
+x.addEventListener("click", () => {
+  sidebar.classList.add("hideSidebar");
+  sidebar.classList.remove("showSidebar");
+});
+
+// outside.addEventListener("click", () => {
+//   sidebar.classList.add("hideSidebar");
+//   sidebar.classList.remove("showSidebar");
+// });

@@ -86,7 +86,11 @@ ul {
   z-index: -1;
 }
 .menu {
-  max-width: 90%;
+  position: absolute;
+  top: 0;
+  width: 1280px;
+  left: 50%;
+  transform: translate(-50%);
 }
 .header_logo img {
   max-width: 205px;
@@ -118,7 +122,7 @@ ul {
   padding: 5px 20px;
   background-color: #f3cf90;
   border-radius: 3px;
-  font-size: 22px;
+  font-size: 19px;
   color: #000;
   transition: transform 0.2s ease;
 }
@@ -185,10 +189,9 @@ ul {
   background-image: url("images/starter-bg.webp");
   background-repeat: no-repeat;
   width: 100%;
-  height: auto;
 }
 .starter_pack {
-  max-width: 90%;
+  max-width: 1280px;
   margin: 0 auto;
 }
 .starter_pack_content {
@@ -247,8 +250,12 @@ ul {
 }
 
 .impact {
-  width: 62%;
+  width: 100%;
   margin-top: 50px;
+}
+
+.impact img {
+  width: 100%;
 }
 .box-check {
   display: flex;
@@ -375,14 +382,14 @@ ul {
 }
 
 .mountain {
-  width: 90%;
+  width: 1280px;
   margin: 0 auto;
   padding-top: 18%;
   padding-bottom: 5%;
 }
 
 .mountain_box {
-  max-width: 90%;
+  max-width: 100%;
 }
 
 .mountain_left {
@@ -464,7 +471,7 @@ ul {
 }
 
 #ship {
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   margin-top: 20px;
   border: none;
   background-color: #eecf98;
@@ -526,7 +533,7 @@ ul {
 }
 
 .ancestral_products {
-  max-width: 90%;
+  max-width: 1280px;
   margin: 0 auto;
   position: relative;
 }
@@ -1204,15 +1211,13 @@ button {
 }
 
 .con_rev > i:first-child {
-  top: 50%;
-  left: 0;
-  transform: translate(-120%, -50%);
+  bottom: 0;
+  left: 45%;
 }
 
 .con_rev > i:last-child {
-  top: 50%;
-  right: 0;
-  transform: translate(120%, -50%);
+  bottom: 0;
+  right: 45%;
 }
 
 .review_slider {
@@ -1228,4 +1233,314 @@ button {
 #right_nav:hover {
   background-color: #e75959;
   cursor: pointer;
+}
+
+.sidebar {
+  background-image: url("images/fter_images/navbg.webp");
+  background-size: cover;
+  background-position: center;
+  width: 500px;
+  height: 100%;
+  position: fixed;
+  z-index: 99999;
+  padding-left: 5%;
+  padding-top: 50px;
+  box-shadow: 0 0 20px #0000000d;
+  transition: transform 0.2s ease;
+  transform: translate(-100%);
+}
+
+.showSidebar {
+  transform: translate(0);
+}
+
+.hideSidebar {
+  transform: translate(-100%);
+}
+
+.sidebar li a {
+  color: #000;
+  font-size: 30px;
+}
+
+.sidebar ul {
+  font-size: 50px;
+}
+
+.menu_mobile {
+  display: none;
+}
+
+.sidebar .ul2 {
+  margin-top: 100px;
+  position: relative;
+}
+
+.sidebar .ul2 li:first-child::before {
+  content: "\f007";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  color: #cccccc;
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.sidebar .ul2 li {
+  line-height: 0.5cm;
+}
+
+.sidebar .ul2 {
+  margin-bottom: 20px;
+}
+.sidebar .ul2 li a {
+  font-size: 15px;
+  color: #cccccc;
+}
+
+.sidebar li:first-child {
+  margin-top: 30px;
+  position: relative;
+}
+
+.sidebar ul:first-child li:first-child::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 2px;
+  background-color: #eecf98;
+  top: -30px;
+  left: 0;
+}
+.sidebar li {
+  margin: 0;
+  line-height: 1cm;
+}
+
+.free_con {
+  background-color: #eecf98;
+  display: inline-block;
+  padding: 10px;
+  font-size: 25px;
+  margin-top: 50px;
+}
+
+.x {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 50px;
+}
+
+.x:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 599px) {
+  .notification_bar,
+  .header_section_wrap,
+  .menu_mobile,
+  .sidebar,
+  .mountain,
+  .feel_alive,
+  .consultation,
+  .review {
+    width: auto;
+  }
+  .menu_mobile {
+    display: flex;
+  }
+
+  .menu {
+    display: none !important;
+  }
+  .consultation {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+  }
+  .top_consultation p {
+    font-size: 52px;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 2cm;
+  }
+  .bot_consultation {
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  .left_con img {
+    width: 100%;
+  }
+  .custom,
+  .custom1 {
+    margin-left: 0;
+    margin-bottom: 15px;
+  }
+
+  .right_con {
+    margin-left: 0;
+  }
+  .right_con p {
+    font-size: 17px;
+  }
+  .getbtn {
+    margin-top: 25px;
+  }
+  .overlay {
+    display: none;
+  }
+  .mountain_left_title {
+    position: relative;
+    font-size: 47px;
+    line-height: 2cm;
+  }
+  .feel_alive img {
+    width: 100%;
+  }
+  .feel_alive {
+    position: absolute;
+    opacity: 0.1;
+    left: 12%;
+    top: 3%;
+  }
+  .mountain_left_text {
+    font-size: 19px;
+    font-family: cerapro-light;
+    margin-top: 20px;
+  }
+  .review_text p {
+    font-size: 45px;
+  }
+  .review_text .stars {
+    font-size: 40px;
+  }
+  .rev {
+    margin-left: 33px;
+    margin-top: 30px;
+  }
+  .content_rev {
+    font-size: 15px;
+  }
+  .mountain_right_title {
+    font-size: 31px;
+    color: black;
+    line-height: 1cm;
+  }
+  .mountain_list {
+    margin-top: 25px;
+    position: relative;
+  }
+  .restore_title1 {
+    font-size: 40px;
+  }
+  .mountain_right {
+    margin-top: 20px;
+    padding: 20px 20px;
+  }
+  .restore_title1 {
+    margin-bottom: 50px;
+  }
+
+  .img_logo img {
+    width: 100%;
+  }
+  .increase_btn {
+    margin-right: 0;
+  }
+  .add_tocart {
+    padding: 10px 15px;
+  }
+
+  .minus,
+  .plus,
+  .number {
+    padding: 10px 15px;
+  }
+
+  #ship {
+    padding: 7px;
+  }
+
+  .notification_bar a {
+    font-size: 12px;
+  }
+
+  .shop_all i {
+    color: #fff;
+    font-size: 50px;
+    display: block;
+    position: relative;
+    right: 0;
+    text-align: center;
+  }
+
+  .mobile_icon i {
+    color: #fff;
+    font-size: 30px;
+    margin-left: 10px;
+  }
+
+  .row_mobile {
+    align-items: center;
+  }
+  .header_content {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .embrace {
+    font-size: 13px;
+    letter-spacing: 0.3cm;
+    text-align: center;
+    font-family: cerapro-light;
+    margin-bottom: 20px;
+  }
+
+  .feel::before {
+    width: 80%;
+    left: 0;
+    transform: translateX(50%);
+  }
+
+  .feel {
+    font-size: 33px;
+    margin-bottom: 15px;
+  }
+  .shop_btn {
+    font-size: 16px;
+  }
+  .product_detail {
+    padding-left: 0;
+  }
+  .line2 {
+    font-size: 37px;
+  }
+  .line3 {
+    font-size: 20px;
+  }
+  .putting_back {
+    padding-top: 70px;
+  }
+  .box-check p {
+    font-size: 17px;
+  }
+  .seen_btn {
+    font-size: 17px;
+
+    padding: 5px 24px;
+  }
+  .con_rev > i:first-child {
+    bottom: 40px;
+    left: 30%;
+  }
+  .review_wrap {
+    width: 100%;
+    background-color: #fbfaf8;
+    padding-top: 50px;
+  }
+
+  .con_rev > i:last-child {
+    bottom: 40px;
+    right: 30%;
+  }
 }
