@@ -19,6 +19,7 @@ for (let i = 0; i < plus.length; i++) {
 const carousel = document.querySelector(".products_row"),
   firstItem = document.querySelector(".product_wrap"),
   arrowIcons = document.querySelectorAll(".ancestral_products .arrow ");
+
 let isDragging = false,
   prePageX,
   preScrollLeft;
@@ -75,6 +76,48 @@ carousel.addEventListener("mousemove", dragging);
 carousel.addEventListener("mouseup", dragStop);
 carousel.addEventListener("mouseleave", dragStop);
 
+///review slider
+
+const container_reivew = document.querySelector(".review_slider");
+const firstReview = document.querySelectorAll(".rev")[0];
+const navIcons = document.querySelectorAll(".con_rev > i");
+console.log(navIcons);
+
+let isPulling = false,
+  prevPgX,
+  prevScrLeft;
+let firstReviewWidth = firstReview.clientWidth + 94;
+
+navIcons.forEach((nav) => {
+  nav.addEventListener("click", () => {
+    container_reivew.scrollLeft +=
+      nav.id == "left_nav" ? -firstReviewWidth : firstReviewWidth;
+  });
+});
+
+const pullingStart = (e) => {
+  isPulling = true;
+  prevPgX = e.pageX;
+  prevScrLeft = container_reivew.scrollLeft;
+};
+
+const pulling = (e) => {
+  if (!isPulling) return;
+  e.preventDefault();
+  container_reivew.classList.add("smoothy_dragging");
+  let diffPo = e.pageX - prevPgX;
+  container_reivew.scrollLeft = prevScrLeft - diffPo;
+};
+
+const pullingEnd = () => {
+  isPulling = false;
+  container_reivew.classList.remove("smoothy_dragging");
+};
+
+container_reivew.addEventListener("mousemove", pulling);
+container_reivew.addEventListener("mousedown", pullingStart);
+container_reivew.addEventListener("mouseup", pullingEnd);
+
 const hideShip = () => {
   let OneTime = document.getElementsByClassName("onetime"); //buttons
   let ship = document.getElementsByClassName("shipment"); //things to hide
@@ -88,7 +131,7 @@ const hideShip = () => {
 //read more
 
 const parentContainer = document.querySelectorAll(".content_rev");
-console.log(parentContainer);
+// console.log(parentContainer);
 
 for (let i = 0; i < parentContainer.length; i++) {
   parentContainer[i].addEventListener("click", (event) => {
