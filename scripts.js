@@ -207,3 +207,24 @@ function scrolling() {
     feel.classList.remove("showfeel_alive");
   }
 }
+
+const closePop = document.querySelector(".close");
+const pop = document.querySelector(".popup_signup_wrap");
+const discount = document.querySelector(".get_discount");
+const no_thanks = document.querySelector(".no_thanks");
+console.log(closePop);
+
+closePop.addEventListener("click", () => {
+  pop.classList.add("close_popup");
+  pop.classList.remove("showPopup");
+});
+
+discount.addEventListener("click", () => {
+  pop.classList.add("showPopup");
+  pop.classList.remove("close_popup");
+});
+
+no_thanks.addEventListener("click", () => {
+  pop.classList.add("close_popup");
+  pop.classList.remove("showPopup");
+});

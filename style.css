@@ -384,6 +384,7 @@ ul {
 
 .mountain_wrap {
   position: relative;
+  overflow: hidden;
 
   width: 100%;
   margin: 0 auto;
@@ -855,6 +856,23 @@ label:hover {
   text-align: center;
 }
 
+button {
+  display: block;
+  padding: 10px;
+  width: 90%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-right: auto; */
+}
+
+button {
+  border: none;
+  background-color: #bd472a;
+  color: #fff;
+  font-size: 18px;
+}
+
 .review_text .stars {
   font-size: 50px;
   text-align: center;
@@ -1149,15 +1167,9 @@ button::before {
   color: #000;
 }
 
-.signup {
-  width: 80%;
-  margin: 0 auto;
-}
-
 #fname,
 #lname,
-#email,
-button {
+#email {
   display: block;
   padding: 10px;
   width: 90%;
@@ -1175,18 +1187,31 @@ button {
   font-weight: bold;
 }
 
-button {
-  border: none;
-  background-color: #bd472a;
-  color: #fff;
-  font-size: 18px;
-}
-
 .get_discount {
   position: fixed;
   z-index: 999999;
   bottom: 0;
   left: 1%;
+}
+
+.bot_signup a {
+  color: #433128;
+  font-family: cerapro-light;
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+}
+
+.bot_signup p {
+  color: #433128;
+  font-family: cerapro-light;
+  margin-top: 20px;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.popup_signup .container {
+  max-width: 100%;
 }
 
 .get_discount i {
@@ -1355,9 +1380,108 @@ button {
 .menu_mobile {
   display: none;
 }
+.popup_signup_wrap {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
 
+  overflow: hidden;
+  z-index: 9999999999;
+}
+
+.close_popup {
+  display: none;
+}
+
+.showPopup {
+  display: block;
+}
+
+.popup_signup img {
+  width: 100%;
+}
+
+.top_signup img {
+  position: relative;
+  width: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.popup_signup {
+  display: flex;
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  font-size: 70px;
+  margin-top: 0;
+  margin-bottom: 0;
+  z-index: 9999999;
+}
+
+#mail,
+#fn,
+#ln {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+#mail {
+  margin-top: 15px;
+}
+
+#mail::placeholder,
+#fn::placeholder,
+#ln::placeholder {
+  font-family: cerapro-light;
+}
+
+.top_signup p {
+  text-align: center;
+  font-family: cerapro-light;
+}
+.top_signup p::first-line {
+  font-size: 50px;
+  font-family: cerapro-bold;
+}
+.signup_part {
+  background-image: url("images/bg-mountain.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 #health {
   position: relative;
+}
+
+.bot_signup span {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #bd472a;
+  color: #fff;
+  margin-top: 20px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+}
+.bot_signup p {
+  text-align: center;
+  margin-top: 20px;
 }
 
 #health::after {
@@ -1383,8 +1507,40 @@ button {
   .visa,
   .copyright,
   .prev_footer,
-  .menu_mobile {
+  .menu_mobile,
+  .popup_signup_wrap {
     width: auto;
+  }
+
+  .popup_img {
+    display: none;
+  }
+  .popup_signup {
+    width: 100%;
+  }
+
+  .top_signup {
+    background-image: url("images/fter_images/5b452f04-cc80-43bf-9305-c07daac75b67.jpeg");
+    background-color: rgba(0, 0, 0, 1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .top_signup p {
+    color: #fff;
+  }
+
+  .close {
+    color: #fff;
+  }
+
+  .bot_signup .row1,
+  .bot_signup .row2 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  #mail {
+    margin-top: 3px;
   }
 
   .menu_mobile {
