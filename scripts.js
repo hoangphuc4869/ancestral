@@ -161,6 +161,7 @@ for (let i = 0; i < parentContainer.length; i++) {
 const sidebar = document.querySelector(".sidebar");
 const x = document.querySelector(".x");
 const shopAll = document.querySelector(".shop_all");
+const shopAll1 = document.querySelector(".shop_all1");
 // const outside = document.querySelector(".main");
 // console.log(outside);
 
@@ -170,6 +171,11 @@ const shopAll = document.querySelector(".shop_all");
 //     sidebar.classList.remove("showSidebar");
 //   }
 // };
+
+shopAll1.addEventListener("click", () => {
+  sidebar.classList.add("showSidebar");
+  sidebar.classList.remove("hideSidebar");
+});
 
 shopAll.addEventListener("click", () => {
   sidebar.classList.add("showSidebar");
@@ -185,3 +191,19 @@ x.addEventListener("click", () => {
 //   sidebar.classList.add("hideSidebar");
 //   sidebar.classList.remove("showSidebar");
 // });
+
+const feel = document.querySelector(".feel_alive");
+
+window.addEventListener("scroll", scrolling);
+scrolling();
+
+function scrolling() {
+  const trigger = window.innerHeight;
+  const feelTop = feel.getBoundingClientRect().top;
+
+  if (feelTop < trigger) {
+    feel.classList.add("showfeel_alive");
+  } else {
+    feel.classList.remove("showfeel_alive");
+  }
+}

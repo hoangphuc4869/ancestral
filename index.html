@@ -18,7 +18,7 @@
       <div class="sidebar">
         <ul>Shop
           <li><a href="#">Shop All</a></li>
-          <li><a href="#">Health Quiz</a></li>
+          <li id="health"><a href="#">Health Quiz</a></li>
           <li><a href="#">Best Sellers</a></li>
           <li><a href="#">Shop By Health Needs</a></li>
           <li><a href="#">Subscribe & Save</a></li>
@@ -52,8 +52,10 @@
         </a>
       </div>
       <div class="header_section_wrap position-relative">
+        
         <div class="overlay"></div>
-        <video
+        <div class="video-wrap">
+          <video
           playinline
           autoplay
           muted
@@ -61,6 +63,21 @@
           id="header_video"
           src="https://cdn.shopify.com/videos/c/o/v/adab29c95e894e79b94b472d7e2da2d3.mp4"
         ></video>
+        </div>
+        <div class="menu_mobile">
+          <div class="mobile_logo">
+            <img src="images/Logo-White_500x.webp" alt="">
+          </div>
+          <div class="mobile_icon">
+            <i class="fa-regular fa-user"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-regular fa-bag-shopping" style="font-weight: 600;"></i>
+
+          </div>
+          <div class="shop_all">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
         <div class="container menu">
           <div class="row header_row">
             <div class="col-2">
@@ -70,7 +87,7 @@
             </div>
             <div class="col-7">
               <div class="main_menu d-flex justify-content-between">
-                <div class="shop_all d-flex">
+                <div class="shop_all1 d-flex">
                   <img src="images/list.png" alt="" />
                   <a href="#!">SHOP ALL</a>
                 </div>
@@ -1144,6 +1161,29 @@
         </div>
       </div>
 
+      <div class="prev_mobile_footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <div class="imag position-relative">
+                  <img src="images/fter_images/367510502_189965563936681_5791662508015335003_n.jpg" alt="">
+                  <div class="layer">
+                    <i class="fa-brands fa-instagram"></i>
+                  </div>
+                </div>
+            </div>
+            <div class="col-6">
+              <div class="imag position-relative">
+                  <img src="images/fter_images/366427988_1491672691597419_4703583048102156068_n.jpg" alt="">
+                  <div class="layer">
+                    <i class="fa-brands fa-instagram"></i>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="prev_footer_images_wrap">
         <div class="prev_footer_images">
           <div class="container fter_img">
@@ -1305,7 +1345,9 @@
         </div>
       </div>
 
-      <div class="copyright">Copyright <span>Ancestral Supplements</span> © 2023 All Rights Reserved. | Site by <span>Storm Brain</span></div>
+      <div class="copyright">
+        <p>Copyright <span>Ancestral Supplements</span> © 2023 All Rights Reserved. | Site by <span>Storm Brain</span></p>
+      </div>
     </div>
     <!-- main -->
 

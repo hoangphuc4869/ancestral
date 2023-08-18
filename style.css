@@ -85,6 +85,13 @@ ul {
   min-height: 100%;
   z-index: -1;
 }
+
+.video-wrap {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+}
 .menu {
   position: absolute;
   top: 0;
@@ -96,7 +103,8 @@ ul {
   max-width: 205px;
 }
 
-.shop_all a {
+.shop_all a,
+.shop_all1 a {
   font-size: 22px;
 }
 
@@ -109,7 +117,8 @@ ul {
   margin-left: 30px;
 }
 
-.shop_all a {
+.shop_all a,
+.shop_all1 a {
   margin-left: 20px;
 }
 
@@ -198,6 +207,9 @@ ul {
   width: 100%;
   text-align: center;
   padding-top: 100px;
+}
+.prev_mobile_footer {
+  display: none;
 }
 
 .line1 {
@@ -466,8 +478,18 @@ ul {
 .feel_alive {
   position: absolute;
   opacity: 0.1;
-  left: 26%;
-  top: 12%;
+  left: 20%;
+
+  transform: translate(120%);
+  transition: transform 1s ease;
+}
+
+.showfeel_alive {
+  transform: translate(0);
+}
+
+.hidefeel_alive {
+  transform: translate(120%);
 }
 
 #ship {
@@ -1267,10 +1289,6 @@ button {
   font-size: 50px;
 }
 
-.menu_mobile {
-  display: none;
-}
-
 .sidebar .ul2 {
   margin-top: 100px;
   position: relative;
@@ -1334,11 +1352,28 @@ button {
 .x:hover {
   cursor: pointer;
 }
+.menu_mobile {
+  display: none;
+}
+
+#health {
+  position: relative;
+}
+
+#health::after {
+  content: "";
+  position: absolute;
+  background-image: url("images/fter_images/start-here_small.png");
+  width: 80px;
+  height: 17px;
+  background-repeat: no-repeat;
+  top: 40%;
+  margin-left: 10px;
+}
 
 @media (max-width: 599px) {
   .notification_bar,
   .header_section_wrap,
-  .menu_mobile,
   .sidebar,
   .mountain,
   .feel_alive,
@@ -1347,15 +1382,87 @@ button {
   .footer,
   .visa,
   .copyright,
-  .prev_footer {
+  .prev_footer,
+  .menu_mobile {
     width: auto;
   }
+
   .menu_mobile {
     display: flex;
+    position: absolute;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #000; */
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.8),
+      rgba(255, 255, 255, 0)
+    );
+  }
+  .mobile_logo {
+    width: 30%;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  .mobile_icon {
+    width: 60%;
+  }
+  .shop_all {
+    width: 10%;
+  }
+
+  .slider img {
+    margin: 0 10px;
+  }
+
+  .footer-wrap {
+    padding-bottom: 25px;
+  }
+
+  .shop_all img {
+    margin-right: 10px;
+  }
+  .mobile_logo img {
+    width: 100%;
+  }
+  .mobile_icon {
+    text-align: right;
+  }
+
+  .mobile_icon i {
+    margin-right: 20px;
+    font-size: 30px;
+    color: #fff;
+  }
+
+  .shop_all {
+    text-align: right;
+    margin-right: 10px;
+  }
+
+  .shop_all i {
+    color: #f4c16a;
+    font-size: 40px;
   }
 
   .menu {
     display: none !important;
+  }
+  .video-wrap {
+    height: 100vh;
+    overflow: hidden;
+    padding: 0;
+    /* position: relative; */
+  }
+
+  #header_video {
+    width: 100%;
+    position: unset;
+    height: 100%px;
+    transform: unset;
+    display: block;
+    object-fit: fill;
+    overflow: hidden;
   }
   .consultation {
     padding-left: 10px;
@@ -1386,6 +1493,25 @@ button {
     margin-left: 0;
     margin-bottom: 15px;
   }
+  .prev_footer {
+  }
+  .prev_mobile_footer {
+    width: auto;
+    display: flex;
+    margin-top: 20px;
+  }
+  .fter_img {
+    display: none;
+  }
+  .prev_footer {
+    margin-left: 12px;
+  }
+  .prev_footer p {
+    margin-top: 50px;
+  }
+  .explore p {
+    margin-top: 25px;
+  }
 
   .right_con {
     margin-left: 0;
@@ -1410,8 +1536,6 @@ button {
   .feel_alive {
     position: absolute;
     opacity: 0.1;
-    left: 12%;
-    top: 3%;
   }
   .mountain_left_text {
     font-size: 19px;
@@ -1475,21 +1599,6 @@ button {
     font-size: 12px;
   }
 
-  .shop_all i {
-    color: #fff;
-    font-size: 50px;
-    display: block;
-    position: relative;
-    right: 0;
-    text-align: center;
-  }
-
-  .mobile_icon i {
-    color: #fff;
-    font-size: 30px;
-    margin-left: 10px;
-  }
-
   .row_mobile {
     align-items: center;
   }
@@ -1507,7 +1616,7 @@ button {
   }
 
   .feel::before {
-    width: 80%;
+    width: 50%;
     left: 0;
     transform: translateX(50%);
   }
@@ -1586,13 +1695,37 @@ button {
     width: 100%;
     background-color: #271d16;
     padding-top: 300px;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
   }
   .copyright {
     font-size: 15px;
-    margin-bottom: 50px;
+    padding-bottom: 50px;
   }
   .visa_brand i {
     font-size: 17px;
+  }
+
+  .get_discount span {
+    font-size: 22px;
+    margin-left: 25px;
+  }
+  .get_discount {
+    bottom: 20px;
+  }
+  .sidebar ul {
+    font-size: 40px;
+  }
+  .sidebar li a {
+    font-size: 28px;
+    padding-right: 10px;
+  }
+  .sidebar {
+    z-index: 9999999;
+  }
+  .header_section_wrap {
+    height: fit-content;
+  }
+  .putting_back_wrap {
+    background-size: cover;
   }
 }
