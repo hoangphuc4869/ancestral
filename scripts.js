@@ -17,12 +17,14 @@ for (let i = 0; i < plus.length; i++) {
 }
 
 const carousel = document.querySelector(".products_row"),
-  firstItem = document.querySelector(".product_wrap"),
+  firstItem = document.querySelectorAll(".product_wrap")[0],
   arrowIcons = document.querySelectorAll(".ancestral_products .arrow ");
 
-let isDragging = false,
+let isDragStart = false,
+  isDragging = false,
   prePageX,
-  preScrollLeft;
+  preScrollLeft,
+  possitionDiff;
 
 const showHiddenIcon = () => {
   // showing or hiding icon according to carousel scroll left value
@@ -49,27 +51,45 @@ arrowIcons.forEach((icon) => {
     setTimeout(() => showHiddenIcon(), 60); // calling showHideIcon after 60ms
   });
 });
+const autoSlide = () => {
+  if (carousel.scrollLeft == carousel.scrollWidth - carousel.clientWidth)
+    return;
+  possitionDiff = Math.abs(possitionDiff); //making positionDif positive
+  let firstItemWidth = firstItem.clientWidth + 24;
+  let valDiff = firstItemWidth - possitionDiff;
+  if (carousel.scrollLeft > preScrollLeft) {
+    //if user is scrolling to the right
+    return (carousel.scrollLeft +=
+      possitionDiff > firstItemWidth / 100 ? valDiff : -possitionDiff);
+  }
+  carousel.scrollLeft -=
+    possitionDiff > firstItemWidth / 100 ? valDiff : -possitionDiff; //if user is scrolling to the left
+};
 
 const dragStart = (e) => {
   // updating global variables value on mosue down event
-  isDragging = true;
+  isDragStart = true;
   prePageX = e.pageX || e.touches[0].pageX;
   preScrollLeft = carousel.scrollLeft;
 };
 const dragging = (e) => {
   // scrolling images to left according to mouse pointer
-  if (!isDragging) return;
+  if (!isDragStart) return;
   e.preventDefault();
+  isDragging = true;
   carousel.classList.add("dragging");
   carousel.scrollLeft = e.pageX;
-  let possitionDiff = (e.pageX || e.touches[0].pageX) - prePageX;
+  possitionDiff = (e.pageX || e.touches[0].pageX) - prePageX;
   carousel.scrollLeft = preScrollLeft - possitionDiff;
   showHiddenIcon();
 };
 
 const dragStop = () => {
-  isDragging = false;
+  isDragStart = false;
   carousel.classList.remove("dragging");
+  if (!isDragging) return;
+  isDragging = false;
+  autoSlide();
 };
 carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("touchstart", dragStart);
@@ -89,34 +109,58 @@ const navIcons = document.querySelectorAll(".con_rev > i");
 console.log(navIcons);
 
 let isPulling = false,
+  isPullStart = false,
   prevPgX,
-  prevScrLeft;
-let firstReviewWidth = firstReview.clientWidth + 94;
+  prevScrLeft,
+  diffPo;
 
 navIcons.forEach((nav) => {
   nav.addEventListener("click", () => {
+    let firstReviewWidth = firstReview.clientWidth + 94;
     container_reivew.scrollLeft +=
       nav.id == "left_nav" ? -firstReviewWidth : firstReviewWidth;
   });
 });
 
+const slideAuto = () => {
+  if (
+    container_reivew.scrollLeft ==
+    container_reivew.scrollWidth - container_reivew.clientWidth
+  )
+    return;
+  diffPo = Math.abs(diffPo);
+  let firstReviewWidth = firstReview.clientWidth + 94;
+  let valDifference = firstReviewWidth - diffPo;
+
+  if (container_reivew.scrollLeft > prevScrLeft) {
+    return (container_reivew.scrollLeft +=
+      diffPo > firstReviewWidth / 100 ? valDifference : -diffPo);
+  }
+  container_reivew.scrollLeft -=
+    diffPo > firstReviewWidth / 100 ? valDifference : -diffPo;
+};
+
 const pullingStart = (e) => {
-  isPulling = true;
+  isPullStart = true;
   prevPgX = e.pageX || e.touches[0].pageX;
   prevScrLeft = container_reivew.scrollLeft;
 };
 
 const pulling = (e) => {
-  if (!isPulling) return;
+  if (!isPullStart) return;
   e.preventDefault();
+  isPulling = true;
   container_reivew.classList.add("smoothy_dragging");
-  let diffPo = (e.pageX || e.touches[0].pageX) - prevPgX;
+  diffPo = (e.pageX || e.touches[0].pageX) - prevPgX;
   container_reivew.scrollLeft = prevScrLeft - diffPo;
 };
 
 const pullingEnd = () => {
-  isPulling = false;
+  isPullStart = false;
   container_reivew.classList.remove("smoothy_dragging");
+  if (!isPulling) return;
+  isPulling = false;
+  slideAuto();
 };
 
 container_reivew.addEventListener("mousemove", pulling);
