@@ -1614,7 +1614,7 @@ button::before {
   #header_video {
     width: 100%;
     position: unset;
-    height: 100%px;
+    height: 100vh;
     transform: unset;
     display: block;
     object-fit: cover;
