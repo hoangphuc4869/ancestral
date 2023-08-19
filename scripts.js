@@ -52,7 +52,10 @@ arrowIcons.forEach((icon) => {
   });
 });
 const autoSlide = () => {
-  if (carousel.scrollLeft == carousel.scrollWidth - carousel.clientWidth)
+  if (
+    carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) > -1 ||
+    carousel.scrollLeft <= 0
+  )
     return;
   possitionDiff = Math.abs(possitionDiff); //making positionDif positive
   let firstItemWidth = firstItem.clientWidth + 24;
@@ -104,9 +107,9 @@ carousel.addEventListener("touchend", dragStop);
 ///review slider
 
 const container_reivew = document.querySelector(".review_slider");
-const firstReview = document.querySelectorAll(".rev")[0];
+const firstReview = document.querySelectorAll(".re")[0];
 const navIcons = document.querySelectorAll(".con_rev > i");
-console.log(navIcons);
+console.log(firstReview);
 
 let isPulling = false,
   isPullStart = false,
@@ -116,7 +119,7 @@ let isPulling = false,
 
 navIcons.forEach((nav) => {
   nav.addEventListener("click", () => {
-    let firstReviewWidth = firstReview.clientWidth + 94;
+    let firstReviewWidth = firstReview.clientWidth + 24;
     container_reivew.scrollLeft +=
       nav.id == "left_nav" ? -firstReviewWidth : firstReviewWidth;
   });
@@ -124,12 +127,14 @@ navIcons.forEach((nav) => {
 
 const slideAuto = () => {
   if (
-    container_reivew.scrollLeft ==
-    container_reivew.scrollWidth - container_reivew.clientWidth
+    container_reivew.scrollLeft -
+      (container_reivew.scrollWidth - container_reivew.clientWidth) >
+      -1 ||
+    container_reivew.scrollLeft <= 0
   )
     return;
   diffPo = Math.abs(diffPo);
-  let firstReviewWidth = firstReview.clientWidth + 94;
+  let firstReviewWidth = firstReview.clientWidth + 24;
   let valDifference = firstReviewWidth - diffPo;
 
   if (container_reivew.scrollLeft > prevScrLeft) {
