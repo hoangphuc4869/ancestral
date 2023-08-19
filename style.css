@@ -338,20 +338,6 @@ ul {
   margin-top: 50px;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  content: "";
-}
-
-.swiper-button-next i,
-.swiper-button-prev i {
-  font-size: 30px;
-  background-color: #f79f9f;
-  color: #000;
-  padding: 10px 15px;
-  border-radius: 50%;
-}
-
 .seen_btn {
   background: #eecf98;
   position: absolute;
@@ -415,11 +401,6 @@ ul {
   padding-bottom: 5%;
 }
 
-.review_slider_container {
-  width: 1280px;
-  margin: 0 auto;
-}
-
 .mountain_box {
   max-width: 100%;
 }
@@ -427,10 +408,6 @@ ul {
 .mountain_left {
   color: #fff;
   padding-top: 50px;
-}
-
-.rev {
-  width: 50%;
 }
 
 .mountain_left_title {
@@ -535,11 +512,6 @@ ul {
   background-color: #f8f0dc;
   padding: 10px 20px;
   cursor: pointer;
-}
-
-.slide-container {
-  width: 1280px;
-  margin: 0 auto;
 }
 
 .minus:hover,
@@ -894,7 +866,7 @@ button {
   /* margin-right: auto; */
 }
 
-Fbutton {
+button {
   border: none;
   background-color: #bd472a;
   color: #fff;
@@ -1536,8 +1508,7 @@ button::before {
   .copyright,
   .prev_footer,
   .menu_mobile,
-  .popup_signup_wrap,
-  .slide-container {
+  .popup_signup_wrap {
     width: auto;
   }
 
@@ -1643,10 +1614,10 @@ button::before {
   #header_video {
     width: 100%;
     position: unset;
-    height: 100vh;
+    height: 100%px;
     transform: unset;
     display: block;
-    object-fit: cover;
+    object-fit: fill;
     overflow: hidden;
   }
   .consultation {
