@@ -866,7 +866,7 @@ button {
   /* margin-right: auto; */
 }
 
-button {
+Fbutton {
   border: none;
   background-color: #bd472a;
   color: #fff;
@@ -1617,7 +1617,7 @@ button::before {
     height: 100%px;
     transform: unset;
     display: block;
-    object-fit: fill;
+    object-fit: cover;
     overflow: hidden;
   }
   .consultation {

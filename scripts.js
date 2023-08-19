@@ -81,7 +81,7 @@ const dragging = (e) => {
   e.preventDefault();
   isDragging = true;
   carousel.classList.add("dragging");
-  carousel.scrollLeft = e.pageX;
+
   possitionDiff = (e.pageX || e.touches[0].pageX) - prePageX;
   carousel.scrollLeft = preScrollLeft - possitionDiff;
   showHiddenIcon();
