@@ -204,14 +204,26 @@ var swiper = new Swiper(".mySwiper", {
 // container_reivew.addEventListener("mouseup", pullingEnd);
 
 const hideShip = () => {
-  let OneTime = document.getElementsByClassName("onetime"); //buttons
-  let ship = document.getElementsByClassName("shipment"); //things to hide
-  for (let i = 0; i < OneTime.length; i++) {
-    OneTime[i].addEventListener("click", () => {
-      ship[i].classList.toggle("hide"); //display none
-    });
-  }
+  // let OneTime = document.getElementsByClassName("onetime"); //buttons
+  // let ship = document.getElementsByClassName("shipment"); //things to hide
+  // for (let i = 0; i < OneTime.length; i++) {
+  //   OneTime[i].addEventListener("click", () => {
+  //     console.log(ship[i]);
+  //     ship[i].classList.toggle("hide"); //display none
+  //   });
+  // }
 };
+let OneTime = document.querySelectorAll(".onetime"); //buttons
+// let OneTime2 = document.getElementsByClassName("onetime"); //buttons/
+console.log(OneTime);
+// console.log(OneTime2);
+OneTime.forEach((element) => {
+  let parent = element.parentNode;
+  element.addEventListener("click", () => {
+    let ship = parent.querySelector(".shipment");
+    ship.classList.toggle("hide");
+  });
+});
 
 //read more
 

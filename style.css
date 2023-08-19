@@ -373,7 +373,7 @@ ul {
   width: 90%;
   margin: 100px auto;
   transform: translate3d(100%, 0, 0);
-  animation: slide 10s linear infinite;
+  animation: slide 5s linear infinite;
   animation-play-state: running;
 }
 
@@ -1467,6 +1467,10 @@ button::before {
 #health {
   position: relative;
 }
+.logo_slider img {
+  width: 50px;
+  height: 50px;
+}
 
 .bot_signup span {
   display: inline-block;
@@ -1494,6 +1498,9 @@ button::before {
   top: 40%;
   margin-left: 10px;
 }
+.slide-container {
+  width: 1280px;
+}
 
 @media (max-width: 599px) {
   .notification_bar,
@@ -1508,7 +1515,9 @@ button::before {
   .copyright,
   .prev_footer,
   .menu_mobile,
-  .popup_signup_wrap {
+  .popup_signup_wrap,
+  .slide-container,
+  .review_slider_container {
     width: auto;
   }
 
@@ -1610,6 +1619,9 @@ button::before {
     padding: 0;
     /* position: relative; */
   }
+  .review_slider_container {
+    padding-top: 50px;
+  }
 
   #header_video {
     width: 100%;
@@ -1617,7 +1629,7 @@ button::before {
     height: 100%px;
     transform: unset;
     display: block;
-    object-fit: fill;
+    object-fit: cover;
     overflow: hidden;
   }
   .consultation {
